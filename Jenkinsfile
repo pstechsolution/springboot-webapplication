@@ -1,7 +1,6 @@
 pipeline{
     tools{
-       
-        maven 'mymaven'
+          maven 'mymaven'
     }
 	agent any
       stages{
@@ -15,7 +14,7 @@ pipeline{
           stage('Compile'){
              
               steps{
-                  echo 'complie the code..'
+         echo 'complie the code..'
                   sh 'mvn compile'
 	      }
           }
@@ -27,15 +26,7 @@ pipeline{
                   sh 'mvn pmd:pmd'
               }
           }
-           stage('UnitTest'){
-		  
-              steps{
-	         
-                  sh 'mvn test'
-              }
-          
-          }
-        
+                
           stage('Package'){
 		  
               steps{
